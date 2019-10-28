@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+	compileSdkVersion rootProject.compileSdk
+	buildToolsVersion "29.0.2"
+
+	defaultConfig {
+		applicationId "com.example.mvvm_coroutine"
+		minSdkVersion rootProject.minSdk
+		targetSdkVersion rootProject.targetSdk
+		versionCode 1
+		versionName "1.0"
+		testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+		multiDexEnabled true
+		vectorDrawables.useSupportLibrary true
+	}
+
+	buildTypes {
+		debug {
+			minifyEnabled false
+			testCoverageEnabled true
+			useProguard false
+		}
+		release {
+			minifyEnabled false
+			useProguard false // true
+			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+			testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguardTest-rules.pro'
+		}
+	}
+
+	dataBinding {
+		enabled = true
+		enabledForTests = true
+	}
+
+	dexOptions {
+		preDexLibraries = false
+		javaMaxHeapSize '2048M'
+	}
+
+}
+
+dependencies {
+	implementation fileTree(dir: 'libs', include: ['*.jar'])
+	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+	implementation "androidx.appcompat:appcompat:$appCompat"
+	implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine"
+	implementation "org.koin:koin-android:$koin"
+	implementation "org.koin:koin-androidx-scope:$koin"
+
+	testImplementation "junit:junit:$jUnit"
+	testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine"
+	testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutine"
+}

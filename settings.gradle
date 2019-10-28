@@ -1,0 +1,2 @@
+include ':domain', ':mvvm-coroutine', ':mvvm-rx2'
+rootProject.name='TestPrj'
