@@ -10,7 +10,4 @@ import com.example.mvvm_rx2.model.base.redux.State
 abstract class BaseLifecycleOwnViewModel<S: State> : ViewModel() {
 
     abstract fun render(state: S): Boolean
-
-    inline fun <reified S: State> getStateType(): Class<S> = S::class.java
-
 }

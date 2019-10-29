@@ -9,8 +9,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import com.example.domain.base.NavigationHelper
+import com.example.mvvm_rx2.app.exts.isStateType
 import com.example.mvvm_rx2.model.base.redux.State
-import com.example.mvvm_rx2.model.base.redux.Store
+import com.example.mvvm_rx2.model.domain.AppStore
+import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 import org.koin.android.ext.android.inject
 
@@ -19,8 +21,7 @@ import org.koin.android.ext.android.inject
  * @since 2019-10-18
  */
 abstract class BaseFragment<S : State> : Fragment() {
-
-    protected val stateStore: Store<S> by inject()
+    protected val stateStore: AppStore by inject()
     protected val viewModel: BaseLifecycleOwnViewModel<S> by inject()
     protected val navigationHelper: NavigationHelper<S> by inject()
     private val compositeDisposable = CompositeDisposable()
@@ -33,7 +34,8 @@ abstract class BaseFragment<S : State> : Fragment() {
         compositeDisposable.clear()
         compositeDisposable.add(
                 stateStore.getStateListener()
-                        .ofType(viewModel.getStateType())
+                        .flatMap { Observable.fromIterable(it.states.values) }
+                        .isStateType()
                         .distinctUntilChanged()
                         .subscribe {
                             if (it as? S == null) throw IllegalStateException("$it is not available states.")

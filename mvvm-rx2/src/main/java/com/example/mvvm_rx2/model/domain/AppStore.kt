@@ -1,11 +1,6 @@
 package com.example.mvvm_rx2.model.domain
 
-import com.example.mvvm_rx2.model.base.redux.Action
-import com.example.mvvm_rx2.model.base.redux.Dispatcher
-import com.example.mvvm_rx2.model.base.redux.MiddleWare
-import com.example.mvvm_rx2.model.base.redux.Reducer
-import com.example.mvvm_rx2.model.base.redux.State
-import com.example.mvvm_rx2.model.base.redux.Store
+import com.example.mvvm_rx2.model.base.redux.*
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.subjects.BehaviorSubject
@@ -16,13 +11,13 @@ import org.koin.core.KoinComponent
  * @since 2019-10-22
  */
 
-class AppStore<S : State>(
-        val reducer: Reducer<S>,
-        initializedState: S
-) : Store<S>, KoinComponent {
-    private val stateEmitter: BehaviorSubject<S> = BehaviorSubject.create()
-    private var state: S = initializedState
-    private val middleWares: List<MiddleWare<S>> = getKoin().getAll()
+class AppStore(
+        val reducer: Reducer<AppState>,
+        initializedState: AppState
+) : Store<AppState>, KoinComponent {
+    private val stateEmitter: BehaviorSubject<AppState> = BehaviorSubject.create()
+    private var state: AppState = initializedState
+    private val middleWares: List<MiddleWare<AppState>> = getKoin().getAll()
     private var dispatcher: Dispatcher = { action: Action ->
         state = reducer.reduce(getCurrentState(), action)
         stateEmitter.onNext(state)
@@ -34,10 +29,10 @@ class AppStore<S : State>(
         }
     }
 
-    override fun getStateListener(): Observable<S> =
+    override fun getStateListener(): Observable<AppState> =
             stateEmitter.hide().observeOn(AndroidSchedulers.mainThread())
 
-    override fun getCurrentState(): S = state
+    override fun getCurrentState(): AppState = state
 
     override fun dispatch(action: Action) {
         dispatcher(action)
@@ -45,17 +40,30 @@ class AppStore<S : State>(
 }
 
 data class AppState(
-        val reducers: List<>
-) : State
+        val states: Map<String, State>
+) : State {
+    inline fun <reified S:State> getCurrentState(stateType: Class<S>) : S {
+        val currentState = states.get(stateType.simpleName)
+                ?: throw NullPointerException("$stateType has not founded error.")
+        return currentState as S
+    }
+}
 
 class AppReducer : Reducer<AppState>, KoinComponent {
     override fun reduce(oldState: AppState, resultAction: Action): AppState {
-        return AppState(
-
-        )
+        return reduces<State, Reducer<State>>(oldState, resultAction)
     }
 
-    inline fun <reified S : State, reified R : Reducer<S>> getReducers(): List<R> =
+    private inline fun <reified S: State, reified R: Reducer<S>> reduces(oldState: AppState, resultAction: Action): AppState {
+        val states = mutableMapOf<String, S>()
+        getReducers<S, R>().map {
+            val stateType = it.getStateTypeOfReducer()
+            states.put(stateType.simpleName, it.reduce(oldState.getCurrentState(stateType), resultAction))
+        }
+        return AppState(states)
+    }
+
+    private inline fun <reified S : State, reified R : Reducer<S>> getReducers(): List<R> =
             getKoin().getAll()
 }
 

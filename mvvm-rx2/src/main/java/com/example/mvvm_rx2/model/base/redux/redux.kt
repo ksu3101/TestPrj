@@ -15,6 +15,8 @@ interface Reducer<S: State> {
     fun reduce(oldState: S, resultAction: Action): S
 }
 
+inline fun <reified S:State> Reducer<S>.getStateTypeOfReducer() : Class<S> = S::class.java
+
 interface Store<S: State> {
     fun dispatch(action: Action)
     fun getStateListener(): Observable<S>

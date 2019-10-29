@@ -3,7 +3,52 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/README.md">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/.gitignore">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/app/di/Modules.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/app/exts/ObservableExts.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/model/base/BaseFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/model/base/BaseViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/model/base/NavigationHelper.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/model/base/redux/redux.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/model/domain/AppStore.kt">
           <value>
             <set />
           </value>
