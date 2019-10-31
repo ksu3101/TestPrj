@@ -13,7 +13,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/mvvm-rx2/.gitignore">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/androidTest/java/com/example/mvvm_rx2/ExampleInstrumentedTest.kt">
           <value>
             <set />
           </value>
@@ -49,6 +64,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/model/domain/AppStore.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/test/java/com/example/mvvm_rx2/ExampleUnitTest.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/test/java/com/example/mvvm_rx2/KoitlinTestingUtils.kt">
           <value>
             <set />
           </value>
