@@ -37,7 +37,7 @@ Reducer를 거쳐서 최종적으로 나온 immutable data class 이다. 이 또
 ### Koin 
 Dependency Injection 툴 로 유명한 Dagger 가 있지만 JAVA 기반 이라 제네릭의 타입소거로 인해 inline-reified 와 같은 실체화된 타입을 적용 하여 반복되는 보일러 플레이트 코드를 제거 하기 위해서 선택. 
  - 장점 : 가독성이 높으며 Dagger 보다 러닝 커브가 매우 낮다. 어노테이션 방식이 아닌 kotlin 의 by keyword 방식이나 inject 와 같은 function 을 제공 하여 쉽게 사용 할 수 있다. 그리고 원하는 커스텀 scope 를 만들기도 쉬우며 Koin 인스턴스를 얻어 injection 하는 방법도 쉽다. 
- - 단점 : Activity scope 가 없어 custom scope 를 만들어야 한다. 이는 BaseActivity 와 같은 base 클래스에서 하는 방법이 있긴 하지만 state 를 알아야 injection 이 되기 때문에 다른 방법을 찾아야 한다. 
+ - 단점 : Activity scope 가 없어 custom scope 를 만들어야 한다. 이는 BaseActivity 와 같은 base 클래스에서 하는 방법이 있긴 하지만 state 를 알아야 injection 이 되기 때문에 다른 방법을 찾아야 한다. dagger 는 컴파일 시점에 각 모듈을 생성하지만 koin은 런타임 시 에 각 모듈을 필요 시점에 생성한다. 이 경우 런타임 예외가 발생할 확률이 높다. 
  - 꼭 Koin 이 아니더라도 DI 를 만드는 방법은 시간만 있으면 누구나 할 수 있을 거라고 생각된다. 이것은 나중에...
  
 ### 네트워크 라이브러리 (고민중)
