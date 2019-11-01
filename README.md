@@ -19,11 +19,17 @@ View 와 바인딩 된 데이터를 업데이트 하고 관리 하는 역활. Mo
 데이터의 흐름은 다음과 같다. 
 > action -> middleWare -> reducer -> state
 
+#### Action
+사용자 혹은 어떠한 스트림에 의해 생성되어진 trigger 역활을 수행 하는 Action 이다. imuutable data class 로 되어 있으며 같은 유형의 경우 sealed 클래스로 묶어 공통적으로 처리 하게 할 수도 있다.
+
 #### Middleware
-dispatch 된 Action 을 이터레이셔닝 하면서 핸들링 한다. Action 이 새로운 Action 이 될 수 있다. 
+dispatch 된 Action 을 이터레이셔닝 하면서 핸들링 한다. middleware 는 1개 일수도 그 보다 많을 수 있다. 모든 middleware 를 이터레이셔닝 모두 지나거나 혹은 중간에 기존의 Action 을 토대로 새로운 Action 이 될 수 있다. 이는 Success 에 대한 (Result)Action 혹은 Failed 에 대한 (Error)Action 이 될 수 있다. 
 
 #### Reducer
-Middleware 를 통해서 나온 (Result)Action 을 분기 하여 State를 만들어 준다. 
+Middleware 를 통해서 나온 Action 을 분기 하여 State를 만들어 준다. 
+
+#### State
+Reducer를 거쳐서 최종적으로 나온 immutable data class 이다. 이 또한 sealed 클래스로 묶을 수 있다. 만들어진 state 는 Store 인터페이스 구현체 에 마지막 상태가 저장되며 Store 를 주입 받을수 있다면 마지막 상태를 Store를 통해 받아 핸들링 할 수 있다. 
 
 ## Kotlin 
 이 샘플 아키텍처 코드는 kotlin 100% 를 목표로 한다. 
@@ -41,6 +47,11 @@ Dependency Injection 툴 로 유명한 Dagger 가 있지만 JAVA 기반 이라 �
  2. [Fuel](https://github.com/kittinunf/fuel) 
   - 장점 : kotlin 으로 구현된 네트워크 라이브러리 이다. 그리고 kotlin, java, coroutine, rx2 모두 지원 한다는 장점이 있다.
   - 단점 : 사용해본 적이 없어 안정성에 대해선 직접 사용 해서 확인 하는 수밖에 없을 거 같다. 
+  
+### 유닛 테스트
+- View 테스트는 제외 한다. (시간부족 및 테스트 구현의 어려움 등..)
+- Model(ActionProcessor 와 Reducer), ViewModel 에 대해서 테스트 코드를 작성 한다. 
+- 필요에 따라 rest Api 에 대해 테스트 코드를 작성 한다. (이 때 결과 json파일을 만들어줘야 한다)
  
 ## Coroutine
 기존 ReactiveX 를 대체 할 수 있는 도구로 생각 해왔었다. ReactiveX 는 매우 강력하고 좋은 툴 이지만 외부 라이브러리 이며 의존성이 너무 크다. 이전에 회사에서 일할 때 Rx1 에서 Rx2 로 고칠때 많은 시간을 필요로 했었던 경험이 있기 때문이다. 그에 반해 코루틴은 기본 코틀린과 같이 응용해서 사용 할 수 있으며 확장함수 등 으로 부족한 기능을 추가 할 수 있지 않을까 생각 하고 있다. 
