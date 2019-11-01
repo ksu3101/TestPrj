@@ -48,6 +48,7 @@ dependencies {
 	implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid"
 	implementation "org.koin:koin-android:$koin"
 	implementation "org.koin:koin-androidx-scope:$koin"
+	implementation "org.koin:koin-androidx-viewmodel:$koin"
 
 	testImplementation "junit:junit:$jUnit"
 	testImplementation "org.mockito:mockito-core:$mockito"	// 3.x 가 나왔는데 유효한지 확인 필

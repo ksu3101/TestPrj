@@ -23,7 +23,7 @@ import org.koin.android.ext.android.inject
  */
 abstract class BaseFragment<S : State> : Fragment() {
     protected val stateStore: AppStore by inject()
-    protected val viewModel: BaseLifecycleOwnViewModel<S> by inject()
+    protected val vm: BaseLifecycleOwnViewModel<S> by inject()
     protected val navigationHelper: NavigationHelper<S> by inject()
     private val compositeDisposable = CompositeDisposable()
     private lateinit var binder : ViewDataBinding
@@ -40,14 +40,14 @@ abstract class BaseFragment<S : State> : Fragment() {
                         .distinctUntilChanged()
                         .subscribe {
                             if (it as? S == null) throw IllegalStateException("$it is not available states.")
-                            if (!viewModel.render(it)) {
+                            if (!vm.render(it)) {
                                 navigationHelper.handle(it)
                             }
                         }
         )
 
         binder = DataBindingUtil.inflate(inflater, getLayoutId(), container, false)
-        binder.setVariable(BR.vm, viewModel)
+        binder.setVariable(BR.vm, vm)
 
         return binder.root
     }
