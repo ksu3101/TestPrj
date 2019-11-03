@@ -9,10 +9,14 @@
 실제 앱 에 적용 된다면 app 모듈 하나만이 아닌 여러가지 모듈을 두어 각각 테스팅 코드를구축 하고 의존을 정리 한다. 
 
 ### View
-실제 화면에 보이는 레이아웃 xml. view 당 n개의 ViewModel 이 바인딩 될 수 있다. 
+실제 화면에 보이는 레이아웃 xml. view 당 n개의 ViewModel 이 바인딩 될 수 있다. 기본적으로 DDD(Domain driven design) 을 기반으로 각 도메인 당 1 Activity 에 n Fragment 로 한다.
 
 ### ViewModel
 View 와 바인딩 된 데이터를 업데이트 하고 관리 하는 역활. Model 을 통해서 전달 받은 State 를 이용 하여 화면을 rendering 한다. 
+
+#### LiveData 
+ObservableField 등 을 버리고 `LiveData` 를 선택 하였다. lifecycle owner 와 바인딩 되어 기존 Observable에 비해 memory leak 에 안전 하기도 하고, 액티비티가 사용 되지 않을 때 백스택에서 데이터를 갱신 하려고 시도 시 앱이 crash 되는 것 을 막을 수도 있다. 또한 live data 는 lifecycle 에 바인딩 되기 때문에 화면의 변화(화면을 가로에서 세로로 전환한다던지) 에 대해 인스턴스를 재 세팅 하지 않고 그대로 갖고 있어 Observable.. 에 비해 유리 하다. 
+하지만 단 LiveData 는 immutable data 이므로 mutable live data 을 구현하여 연결 해 주어야 한다. 
 
 ### Model 
 실제 비즈니스 로직을 수행 하며 Redux 구조를 채택 하면서 MiddleWare들 과 Reducer 로 나뉘어져 있다. 
