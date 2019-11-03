@@ -8,4 +8,9 @@ import com.example.mvvm_rx2.model.base.redux.Action
  * @since 2019-11-01
  */
 
-interface LoginAction: Action
+sealed class LoginAction: Action
+
+data class UserLoginAction(
+        val userId: String,
+        val passWord: String
+): LoginAction()

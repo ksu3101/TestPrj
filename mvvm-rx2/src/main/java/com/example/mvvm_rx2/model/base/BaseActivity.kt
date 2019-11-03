@@ -2,16 +2,13 @@ package com.example.mvvm_rx2.model.base
 
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
-import com.example.domain.domain.MessageState
 import com.example.mvvm_rx2.model.base.helper.MessageHelper
 import com.example.mvvm_rx2.model.domain.AppStore
-import com.example.mvvm_rx2.model.domain.InitializedMessageState
-import com.example.mvvm_rx2.model.domain.MessageAction
+import com.example.mvvm_rx2.model.domain.common.HandledMessageAction
+import com.example.mvvm_rx2.model.domain.common.MessageState
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
-import org.koin.android.ext.android.getKoin
 import org.koin.android.ext.android.inject
-import org.koin.androidx.scope.currentScope
 
 /**
  * @author burkd
@@ -48,7 +45,7 @@ abstract class BaseActivity: AppCompatActivity() {
                         .flatMap { Observable.fromIterable(it.states.values) }
                         .ofType(MessageState::class.java)
                         .doOnNext {
-                            stateStore.dispatch(InitializedMessageState())
+                            stateStore.dispatch(HandledMessageAction)
                         }
                         .subscribe {
                             handleMessageState(it)

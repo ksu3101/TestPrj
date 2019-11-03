@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">mvvm-rx2</string>
+
+    <!-- common -->
+    <string name="c_yes">예</string>
+    <string name="c_no">아니오 </string>
+
+    <!-- login / auth -->
+    <string name="login_error_commmon">ID 혹은 비밀번호를 입력 해주세요.</string>
+
 </resources>

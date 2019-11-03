@@ -8,6 +8,7 @@ import com.example.mvvm_rx2.model.base.redux.State
 import com.example.mvvm_rx2.model.domain.AppReducer
 import com.example.mvvm_rx2.model.domain.AppState
 import com.example.mvvm_rx2.model.domain.AppStore
+import com.example.mvvm_rx2.model.domain.common.MessageReducer
 import com.example.mvvm_rx2.model.domain.login.LoginFragmentVM
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -19,6 +20,9 @@ import org.koin.dsl.module
  * @since 2019-10-18
  */
 val appModule = module {
+    single {
+        MessageReducer()
+    }
     single {
         AppState(mutableMapOf())
         AppStore(AppReducer(), get())

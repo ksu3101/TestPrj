@@ -50,6 +50,7 @@ data class AppState(
 }
 
 class AppReducer : Reducer<AppState>, KoinComponent {
+
     override fun reduce(oldState: AppState, resultAction: Action): AppState {
         return reduces<State, Reducer<State>>(oldState, resultAction)
     }

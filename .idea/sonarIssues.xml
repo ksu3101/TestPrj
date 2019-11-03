@@ -118,6 +118,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/model/base/ObservableLiveData.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/model/base/helper/MessageHelper.kt">
           <value>
             <set />
@@ -139,6 +144,21 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/model/domain/MessageState.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/model/domain/common/MessageAction.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/model/domain/common/MessageReducer.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/model/domain/common/MessageState.kt">
           <value>
             <set />
           </value>
@@ -168,12 +188,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/res/values/strings.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/mvvm-rx2/src/test/java/com/example/mvvm_rx2/ExampleUnitTest.kt">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/mvvm-rx2/src/test/java/com/example/mvvm_rx2/KoitlinTestingUtils.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../wms-app/app/src/main/java/com/coupang/wms/mobile/app/helper/MessageHelperV2Impl.kt">
           <value>
             <set />
           </value>
