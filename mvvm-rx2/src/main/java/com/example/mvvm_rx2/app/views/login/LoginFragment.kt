@@ -7,7 +7,6 @@ import com.example.mvvm_rx2.model.domain.login.LoginState
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
- *
  * @author burkd
  * @since 2019-11-01
  */

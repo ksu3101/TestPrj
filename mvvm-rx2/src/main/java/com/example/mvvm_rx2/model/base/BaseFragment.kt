@@ -55,5 +55,7 @@ abstract class BaseFragment<S : State> : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         compositeDisposable.clear()
+        vm.dispose()
     }
+
 }
