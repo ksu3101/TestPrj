@@ -7,5 +7,7 @@
 
     <!-- login / auth -->
     <string name="login_error_commmon">ID 혹은 비밀번호를 입력 해주세요.</string>
+    <string name="login_error_not_available_infos">사용자 정보를 얻는데 실패하였습니다.\n다시 시도해 주세요.</string>
+    <string name="logout_success_guide">로그아웃 되었습니다.</string>
 
 </resources>

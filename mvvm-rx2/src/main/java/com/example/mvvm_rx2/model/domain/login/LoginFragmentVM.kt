@@ -13,18 +13,18 @@ import com.example.mvvm_rx2.model.domain.AppStore
 class LoginFragmentVM(
         val appStore: AppStore,
         val messageHelper: MessageHelper
-) : BaseLifecycleOwnViewModel<LoginState>() {
+) : BaseLifecycleOwnViewModel<UserAuthState>() {
 
     val userId = CombinedLiveData<String>()
     val passWord = CombinedLiveData<String>()
 
-    override fun render(state: LoginState): Boolean {
+    override fun render(state: UserAuthState): Boolean {
         // nothing to do ..
         return true
     }
 
     fun onClickedLoginButton() {
-        login(userId.get(), passWord.get())
+        login(userId.value, passWord.value)
     }
 
     private fun login(userId: String?, pw: String?) {

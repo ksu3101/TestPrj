@@ -7,4 +7,4 @@ import com.example.mvvm_rx2.model.base.redux.State
  * @since 2019-11-01
  */
 
-interface LoginState: State
+interface UserAuthState: State

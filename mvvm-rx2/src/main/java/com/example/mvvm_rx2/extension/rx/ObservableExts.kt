@@ -1,4 +1,4 @@
-package com.example.mvvm_rx2.app.exts
+package com.example.mvvm_rx2.extension.rx
 
 import com.example.mvvm_rx2.model.base.redux.State
 import io.reactivex.Observable

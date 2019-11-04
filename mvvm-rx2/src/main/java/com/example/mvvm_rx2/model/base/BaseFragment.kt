@@ -10,7 +10,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import com.example.domain.base.NavigationHelper
 import com.example.mvvm_rx2.BR
-import com.example.mvvm_rx2.app.exts.isStateType
+import com.example.mvvm_rx2.extension.rx.isStateType
 import com.example.mvvm_rx2.model.base.redux.State
 import com.example.mvvm_rx2.model.domain.AppStore
 import io.reactivex.Observable

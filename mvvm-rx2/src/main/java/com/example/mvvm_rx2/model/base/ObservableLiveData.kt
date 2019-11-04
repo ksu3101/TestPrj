@@ -12,10 +12,12 @@ import androidx.lifecycle.MutableLiveData
 class CombinedLiveData<T> : LiveData<T>() {
     private val mutableLiveData = MutableLiveData<T>()
 
-    fun get(): T? = mutableLiveData.value
-
     fun set(value: T?) {
         mutableLiveData.value = value
+    }
+
+    override fun getValue(): T? {
+        return mutableLiveData.value
     }
 }
 
@@ -24,10 +26,12 @@ class CombinedNotNullableLiveData<T>(
 ) : LiveData<T>() {
     private val mutableLiveData = NotNullableMutableLiveData(initliazedValue)
 
-    fun get(): T = mutableLiveData.value!!
-
     fun set(value: T) {
         mutableLiveData.value = value
+    }
+
+    override fun getValue(): T {
+        return mutableLiveData.value!!
     }
 }
 

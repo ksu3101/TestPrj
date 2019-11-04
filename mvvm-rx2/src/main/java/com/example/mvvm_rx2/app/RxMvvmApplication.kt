@@ -1,10 +1,7 @@
 package com.example.mvvm_rx2.app
 
 import androidx.multidex.MultiDexApplication
-import com.example.mvvm_rx2.app.di.appModule
-import com.example.mvvm_rx2.app.di.helpers
-import com.example.mvvm_rx2.app.di.middleWares
-import com.example.mvvm_rx2.app.di.viewModels
+import com.example.mvvm_rx2.app.base.di.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -22,6 +19,7 @@ class RxMvvmApplication : MultiDexApplication() {
             androidLogger()
             androidContext(this@RxMvvmApplication)
             modules(appModule)
+            modules(repositories)
             modules(middleWares)
             modules(viewModels)
             modules(helpers)

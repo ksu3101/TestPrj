@@ -26,5 +26,4 @@ abstract class BaseLifecycleOwnViewModel<S : State> : ViewModel(), RxDisposer {
             compositeDisposable.dispose()
         }
     }
-
 }

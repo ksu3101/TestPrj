@@ -17,17 +17,14 @@ data class ShowingGeneralToastState(
 ) : MessageState()
 
 data class ShowingErrorToastState(
-        @StringRes val messageResId: Int
+        @StringRes val messageResId: Int,
+        val message: String? = null
 ) : MessageState()
 
 data class ShowingOneButtonDialogState(
         @StringRes val title: Int,
-        @StringRes val messageResId: Int
-) : MessageState()
-
-data class ShowingTwoButtonDialogState(
-        @StringRes val title: Int,
-        @StringRes val messageResId: Int
+        @StringRes val messageResId: Int,
+        val isErrorDialog: Boolean = false
 ) : MessageState()
 
 data class ShowingReTryActionDialogState(

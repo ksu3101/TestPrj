@@ -1,6 +1,7 @@
-package com.example.mvvm_rx2.model.base.rx
+package com.example.mvvm_rx2.extension.rx
 
 import com.example.mvvm_rx2.model.base.RxDisposer
+import com.example.mvvm_rx2.model.base.redux.Action
 import io.reactivex.*
 
 /**
@@ -78,4 +79,19 @@ fun Completable.subscribeWith(
                     { onError?.let { errorHandler -> errorHandler(it) } }
             )
     )
+}
+
+inline fun createActionProcessor(crossinline merger: (Observable<Action>) -> Array<Observable<Action>>): ObservableTransformer<Action, Action> =
+        ObservableTransformer {
+            it.publish { shared ->
+                Observable.mergeArray<Action>(*merger(shared))
+            }
+        }
+
+inline fun <T : Action> actionTransformer(crossinline body: (T) -> Observable<Action>): ObservableTransformer<T, Action> {
+    return ObservableTransformer { actionObservable ->
+        actionObservable.flatMap {
+            body(it)
+        }
+    }
 }

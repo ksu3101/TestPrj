@@ -4,8 +4,7 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mvvm_rx2.model.base.helper.MessageHelper
 import com.example.mvvm_rx2.model.domain.AppStore
-import com.example.mvvm_rx2.model.domain.common.HandledMessageAction
-import com.example.mvvm_rx2.model.domain.common.MessageState
+import com.example.mvvm_rx2.model.domain.common.*
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 import org.koin.android.ext.android.inject
@@ -37,9 +36,7 @@ abstract class BaseActivity: AppCompatActivity() {
     }
 
     private fun handleAppState() {
-        if (!::compositeDisposable.isInitialized) {
-            compositeDisposable = CompositeDisposable()
-        }
+        checkCompositeDisposableInstanceAndCreator()
         compositeDisposable.add(
                 stateStore.getStateListener()
                         .flatMap { Observable.fromIterable(it.states.values) }
@@ -55,7 +52,37 @@ abstract class BaseActivity: AppCompatActivity() {
 
     private fun handleMessageState(msgState: MessageState) {
         when (msgState) {
+            is ShowingGeneralToastState -> {
+                messageHelper.showingGeneralToast(msgState.messageResId)
+            }
+            is ShowingErrorToastState -> {
+                messageHelper.showingErrorToast(msgState.messageResId, msgState.message)
+            }
+            is ShowingOneButtonDialogState -> {
+                checkCompositeDisposableInstanceAndCreator()
+                compositeDisposable.add( // todo : add error dialog flag and resources
+                        messageHelper.createOneButtonDialog(
+                                msgState.title,
+                                msgState.messageResId)
+                                .subscribe()
+                )
+            }
+            is ShowingReTryActionDialogState -> {
+                checkCompositeDisposableInstanceAndCreator()
+                compositeDisposable.add(
+                        messageHelper.createReTryActionDialog(
+                                msgState.title,
+                                msgState.messageResId,
+                                msgState.retryAction
+                        ).subscribe()
+                )
+            }
+        }
+    }
 
+    private fun checkCompositeDisposableInstanceAndCreator() {
+        if (!::compositeDisposable.isInitialized) {
+            compositeDisposable = CompositeDisposable()
         }
     }
 

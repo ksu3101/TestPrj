@@ -18,17 +18,14 @@ data class ShowingGeneralToast(
 ) : MessageAction()
 
 data class ShowingErrorToast(
-        @StringRes val messageResId: Int
+        @StringRes val messageResId: Int = 0,
+        val message: String? = null
 ) : MessageAction()
 
 data class ShowingOneButtonDialog(
         @StringRes val title: Int,
-        @StringRes val messageResId: Int
-) : MessageAction()
-
-data class ShowingTwoButtonDialog(
-        @StringRes val title: Int,
-        @StringRes val messageResId: Int
+        @StringRes val messageResId: Int,
+        val isErrorDialog: Boolean = false
 ) : MessageAction()
 
 data class ShowingReTryActionDialog(

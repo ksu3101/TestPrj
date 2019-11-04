@@ -73,6 +73,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/app/base/di/Modules.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/app/base/helper/MessageHelperImpl.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/app/base/helper/ResourceHelperImpl.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/app/di/Modules.kt">
           <value>
             <set />
@@ -88,12 +103,42 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/app/repositories/AuthRepositoryImpl.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/app/views/login/LoginActivity.kt">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/app/views/login/LoginFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/extension/FragmentActivityExts.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/extension/RxExts.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/extension/StringExts.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/extension/rx/CompletableExts.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/extension/rx/RxExts.kt">
           <value>
             <set />
           </value>
@@ -129,6 +174,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/model/base/helper/MessageHelper.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/model/base/helper/ResourceHelper.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/model/base/redux/ActionProcessorMiddleWare.kt">
           <value>
             <set />
           </value>
@@ -188,6 +243,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/model/domain/login/AuthActionProcessor.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/model/domain/login/AuthRepository.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/model/domain/login/LoginAction.kt">
           <value>
             <set />
@@ -199,6 +264,21 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/model/domain/login/LoginState.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/model/domain/login/UserAuthAction.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/model/domain/login/UserAuthState.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2/src/main/java/com/example/mvvm_rx2/model/domain/login/dto/User.kt">
           <value>
             <set />
           </value>

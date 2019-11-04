@@ -15,8 +15,11 @@ class MessageReducer : Reducer<MessageState> {
             is HandledMessageAction -> HandledMessageState
             is ShowingGeneralToast -> ShowingGeneralToastState(resultAction.messageResId)
             is ShowingErrorToast -> ShowingErrorToastState(resultAction.messageResId)
-            is ShowingOneButtonDialog -> ShowingOneButtonDialogState(resultAction.title, resultAction.messageResId)
-            is ShowingTwoButtonDialog -> ShowingTwoButtonDialogState(resultAction.title, resultAction.messageResId)
+            is ShowingOneButtonDialog -> ShowingOneButtonDialogState(
+                    resultAction.title,
+                    resultAction.messageResId,
+                    resultAction.isErrorDialog
+            )
             is ShowingReTryActionDialog -> ShowingReTryActionDialogState(
                     resultAction.title,
                     resultAction.messageResId,

@@ -10,7 +10,7 @@ import io.reactivex.subjects.PublishSubject
  */
 
 interface ActionProcessor<S: State> {
-    fun run(action: Observable<Action>, store: Store<S>): Observable<Action>
+    fun run(action: Observable<Action>, store: Store<S>): Observable<out Action>
 }
 
 class ActionProcessorMiddleWare<S: State>(

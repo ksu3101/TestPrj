@@ -1,10 +1,11 @@
-package com.example.mvvm_rx2.app.helper
+package com.example.mvvm_rx2.app.base.helper
 
 import android.app.AlertDialog
 import android.content.Context
 import android.widget.Toast
 import androidx.annotation.StringRes
 import com.example.mvvm_rx2.R
+import com.example.mvvm_rx2.extension.isNotNullOrEmpty
 import com.example.mvvm_rx2.model.base.helper.MessageHelper
 import com.example.mvvm_rx2.model.base.redux.Action
 import com.example.mvvm_rx2.model.domain.AppStore
@@ -12,6 +13,7 @@ import io.reactivex.Completable
 import io.reactivex.Maybe
 import io.reactivex.disposables.Disposables
 import org.koin.core.KoinComponent
+import java.lang.IllegalArgumentException
 
 /**
  * @author burkd
@@ -25,9 +27,15 @@ class MessageHelperImpl(
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 
-    override fun showingErrorToast(message: Int) {
+    override fun showingErrorToast(messageResId: Int, message: String?) {
         // todo : need inflating background color
-        Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+        val msg = if (messageResId == 0 && message.isNullOrEmpty()) {
+            throw IllegalArgumentException("message parameter has not available.")
+        } else {
+            if (message.isNotNullOrEmpty()) message
+            else context.getString(messageResId)
+        }
+        Toast.makeText(context, msg, Toast.LENGTH_LONG).show()
     }
 
     override fun createOneButtonDialog(title: Int, message: Int): Completable =
