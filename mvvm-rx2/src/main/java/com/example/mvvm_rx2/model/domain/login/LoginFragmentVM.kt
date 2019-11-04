@@ -6,7 +6,6 @@ import com.example.mvvm_rx2.model.base.CombinedLiveData
 import com.example.mvvm_rx2.model.base.helper.MessageHelper
 import com.example.mvvm_rx2.model.domain.AppStore
 
-
 /**
  * @author burkd
  * @since 2019-11-01
