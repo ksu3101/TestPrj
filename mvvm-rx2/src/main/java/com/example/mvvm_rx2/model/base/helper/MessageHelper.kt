@@ -13,7 +13,10 @@ interface MessageHelper {
 
     fun showingGeneralToast(@StringRes message: Int)
 
-    fun showingErrorToast(@StringRes messageResId: Int, message: String?)
+    fun showingErrorToast(
+            @StringRes messageResId: Int,
+            message: String? = null
+    )
 
     fun createOneButtonDialog(
             @StringRes title: Int,

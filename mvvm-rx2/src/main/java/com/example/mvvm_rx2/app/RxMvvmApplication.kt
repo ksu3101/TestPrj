@@ -5,6 +5,7 @@ import com.example.mvvm_rx2.app.base.di.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
+import org.koin.core.logger.Level
 
 /**
  * @author ksu3101
@@ -16,7 +17,7 @@ class RxMvvmApplication : MultiDexApplication() {
         super.onCreate()
 
         startKoin {
-            androidLogger()
+            androidLogger(Level.DEBUG)
             androidContext(this@RxMvvmApplication)
             modules(appModule)
             modules(repositories)

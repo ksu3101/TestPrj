@@ -1,5 +1,6 @@
 package com.example.mvvm_rx2.model.base
 
+import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mvvm_rx2.model.base.helper.MessageHelper
@@ -8,6 +9,7 @@ import com.example.mvvm_rx2.model.domain.common.*
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 import org.koin.android.ext.android.inject
+import org.koin.core.KoinComponent
 
 /**
  * @author burkd
@@ -22,6 +24,11 @@ abstract class BaseActivity: AppCompatActivity() {
     abstract fun getLayoutId(): Int
 
     private lateinit var compositeDisposable: CompositeDisposable
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(getLayoutId())
+    }
 
     override fun onResume() {
         super.onResume()

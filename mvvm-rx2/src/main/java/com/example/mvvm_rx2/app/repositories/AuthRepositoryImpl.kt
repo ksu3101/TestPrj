@@ -13,7 +13,7 @@ import io.reactivex.Maybe
  */
 class AuthRepositoryImpl : AuthRepository {
     override fun login(userId: String, passWord: String): Maybe<User> {
-        return Maybe.just(User(""))
+        return Maybe.just(User("userId", "nickName"))
     }
 
     override fun logOut(userId: String): Completable {

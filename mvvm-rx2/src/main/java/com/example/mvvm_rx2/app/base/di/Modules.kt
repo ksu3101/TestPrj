@@ -3,6 +3,7 @@ package com.example.mvvm_rx2.app.base.di
 import com.example.mvvm_rx2.app.base.helper.MessageHelperImpl
 import com.example.mvvm_rx2.app.base.helper.ResourceHelperImpl
 import com.example.mvvm_rx2.app.repositories.AuthRepositoryImpl
+import com.example.mvvm_rx2.model.base.BaseLifecycleOwnViewModel
 import com.example.mvvm_rx2.model.base.helper.MessageHelper
 import com.example.mvvm_rx2.model.base.helper.ResourceHelper
 import com.example.mvvm_rx2.model.base.redux.ActionProcessorMiddleWare
@@ -14,6 +15,7 @@ import com.example.mvvm_rx2.model.domain.common.MessageReducer
 import com.example.mvvm_rx2.model.domain.login.AuthActionProcessor
 import com.example.mvvm_rx2.model.domain.login.AuthRepository
 import com.example.mvvm_rx2.model.domain.login.LoginFragmentVM
+import com.example.mvvm_rx2.model.domain.login.UserAuthState
 import org.koin.android.ext.koin.androidApplication
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -29,10 +31,9 @@ val appModule = module {
     }
     single {
         AppState(mutableMapOf())
-        AppStore(AppReducer(), get())
     }
-    single<ResourceHelper> {
-        ResourceHelperImpl(androidApplication())
+    single {
+        AppStore(AppReducer(), get())
     }
 }
 
@@ -50,8 +51,9 @@ val middleWares = module {
 
 val helpers = module {
     single<MessageHelper> { MessageHelperImpl(androidContext()) }
+    single<ResourceHelper> { ResourceHelperImpl(androidApplication()) }
 }
 
 val viewModels = module {
-    viewModel { LoginFragmentVM(get(), get()) }
+    viewModel<BaseLifecycleOwnViewModel<UserAuthState>> { LoginFragmentVM(get(), get()) }
 }
