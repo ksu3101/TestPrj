@@ -13,6 +13,201 @@
             <set />
           </value>
         </entry>
+        <entry key="/fragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/.gitignore">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/app/src/main/AndroidManifest.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/app/src/main/java/com/example/swinstagram/RxMvvmApplication.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/app/src/main/java/com/example/swinstagram/SwInstagramApplication.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/app/src/main/java/com/example/swinstagram/base/di/Modules.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/app/src/main/java/com/example/swinstagram/base/helper/MessageHelperImpl.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/app/src/main/java/com/example/swinstagram/base/helper/ResourceHelperImpl.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/app/src/main/res/layout/login_fragment.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/app/src/main/res/values/strings.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/common/src/main/java/com/example/extensions/rx/CompletableExts.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/common/src/main/res/values/strings.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/extensions/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/extensions/src/main/java/com/example/extensions/rx/ObservableExts.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/extensions/src/main/java/com/example/extensions/rx/RxExts.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/model/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/model/src/main/java/com/example/model/base/BaseActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/model/src/main/java/com/example/model/base/BaseFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/model/src/main/java/com/example/model/base/BaseViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/model/src/main/java/com/example/model/base/NavigationHelper.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/model/src/main/java/com/example/model/base/ObservableLiveData.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/model/src/main/java/com/example/model/base/RxDisposer.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/model/src/main/java/com/example/model/base/exts/rx/CompletableExts.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/model/src/main/java/com/example/model/base/exts/rx/ObservableExts.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/model/src/main/java/com/example/model/base/exts/rx/RxExts.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/model/src/main/java/com/example/model/base/helper/MessageHelper.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/model/src/main/java/com/example/model/base/helper/ResourceHelper.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/model/src/main/java/com/example/model/base/redux/ActionProcessorMiddleWare.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/model/src/main/java/com/example/model/base/redux/redux.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/model/src/main/java/com/example/model/domain/AppStore.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/model/src/main/java/com/example/model/domain/auth/AuthActionProcessor.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/model/src/main/java/com/example/model/domain/auth/LoginFragmentVM.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/model/src/main/java/com/example/model/domain/auth/UserAuthAction.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/model/src/main/java/com/example/model/domain/auth/UserAuthState.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/model/src/main/java/com/example/model/domain/common/MessageAction.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/model/src/main/java/com/example/model/domain/common/MessageReducer.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SwInstagram/model/src/main/java/com/example/model/domain/common/MessageState.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../TestApplication/app/build.gradle">
           <value>
             <set />
@@ -44,6 +239,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mvvm-rx2-v2/build.gradle">
           <value>
             <set />
           </value>

@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+	compileSdkVersion rootProject.compileSdk
+	buildToolsVersion "29.0.2"
+	defaultConfig {
+		applicationId "com.example.mvvm_rx2_v2"
+		minSdkVersion rootProject.minSdk
+		targetSdkVersion rootProject.targetSdk
+		versionCode 1
+		versionName "1.0"
+		testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+		multiDexEnabled true
+	}
+	buildTypes {
+		debug {
+			minifyEnabled false
+			testCoverageEnabled true
+			useProguard false
+		}
+		release {
+			minifyEnabled false
+			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+		}
+	}
+	dataBinding {
+		enabled = true
+		enabledForTests = true
+	}
+	dexOptions {
+		preDexLibraries = false
+		javaMaxHeapSize '2048M'
+	}
+	testOptions {
+		unitTests {
+			returnDefaultValues = true
+		}
+	}
+}
+
+dependencies {
+	implementation fileTree(dir: 'libs', include: ['*.jar'])
+	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+	implementation "androidx.appcompat:appcompat:$appCompat"
+	implementation "androidx.recyclerview:recyclerview:$recyclerview"
+	implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid"
+	implementation "org.koin:koin-android:$koin"
+	implementation "org.koin:koin-androidx-scope:$koin"
+	implementation "org.koin:koin-androidx-viewmodel:$koin"
+	implementation "com.github.bumptech.glide:glide:$glide"
+	implementation "com.squareup.retrofit2:retrofit:$retrofit"
+	implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitRxAdapter"
+	implementation "com.squareup.retrofit2:converter-moshi:$retrofitMoshiConverter"
+	implementation "com.squareup.okhttp3:logging-interceptor:$okhttpLoggingInterceptor"
+
+	testImplementation "junit:junit:$jUnit"
+	testImplementation "org.mockito:mockito-core:$mockito"
+	testImplementation "org.koin:koin-test:$koin"
+}

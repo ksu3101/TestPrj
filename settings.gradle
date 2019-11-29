@@ -1,2 +1,2 @@
-include ':domain', ':mvvm-coroutine', ':mvvm-rx2'
+include ':domain', ':mvvm-coroutine', ':mvvm-rx2', ':mvvm-rx2-v2'
 rootProject.name='TestPrj'

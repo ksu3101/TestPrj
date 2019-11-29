@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/domain" />
             <option value="$PROJECT_DIR$/mvvm-coroutine" />
             <option value="$PROJECT_DIR$/mvvm-rx2" />
+            <option value="$PROJECT_DIR$/mvvm-rx2-v2" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
